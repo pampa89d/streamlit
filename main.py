@@ -19,6 +19,7 @@ def load_data(path) -> pd.DataFrame:
     day_dict = {'Thur': 1, 'Fri': 2, 'Sat': 3, 'Sun': 4}
     tips.sort_values(by='day', key=lambda x: x.map(day_dict), 
                      inplace=True)
+    tips.drop('Unnamed: 0', axis=1, inplace=True)
     return tips
 
 @st.cache_data
