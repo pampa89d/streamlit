@@ -25,10 +25,10 @@ st.write(ticker_df.head(3))
 
 stock_types = tuple(ticker_df.columns)
 option_1 = st.selectbox('Please choose stock data', stock_types, key="selectbox_1")
-#st.line_chart(ticker_df[option_1])
+st.line_chart(ticker_df[option_1])
 
 option_2 = st.selectbox('Please choose stock data', stock_types, key="selectbox_2")
-#st.line_chart(ticker_df[option_2])
+st.line_chart(ticker_df[option_2])
 
 def boxplot(df: pd.DataFrame):
     df = df.loc[:, ['Open', 'Close']]
@@ -49,9 +49,9 @@ def boxplot(df: pd.DataFrame):
     df.columns.values[1] = 'Type'
     df.columns.values[2] = 'Price'
     df = df.groupby([pd.Grouper(key='Date', freq='MS'), 'Type'], as_index=False).mean()
-    option_strt = st.selectbox('Please choose start date', df['Date'].to_list(),
+    option_strt = st.selectbox('Please choose start date', df['Date'].unique(),
                                 key="selectbox_3")
-    option_end = st.selectbox('Please choose end date', df['Date'].to_list(), 
+    option_end = st.selectbox('Please choose end date', df['Date'].unique(), 
                                 key="selectbox_4")
     df = df[(df['Date'] > np.datetime64(option_strt)) &
             (df['Date'] < np.datetime64(option_end))]
