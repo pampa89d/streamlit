@@ -4,4 +4,4 @@
   2. Визуализация датасета по чаевым (tips.csv)
 
 Приложение:
-https://pampa89d-streamlit-streamlit-app-usidk9.streamlit.app/
+[https://pampa89d-streamlit-streamlit-app-usidk9.streamlit.app/](https://pampa89d-streamlit-streamlit-app-usidk9.streamlit.app/)
