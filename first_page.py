@@ -49,14 +49,13 @@ def boxplot(df: pd.DataFrame):
     df.columns.values[1] = 'Type'
     df.columns.values[2] = 'Price'
     df = df.groupby([pd.Grouper(key='Date', freq='MS'), 'Type'], as_index=False).mean()
-    st.write(df.head())
     option_strt = st.selectbox('Please choose start date', df['Date'].to_list(),
                                 key="selectbox_3")
     option_end = st.selectbox('Please choose end date', df['Date'].to_list(), 
                                 key="selectbox_4")
     df = df[(df['Date'] > np.datetime64(option_strt)) &
             (df['Date'] < np.datetime64(option_end))]
-    st.write(df.head())
+    st.write(df)
 
     fig = plt.figure(figsize=(10, 10))
     sns.boxplot(data=df, x='Date', y='Price')
