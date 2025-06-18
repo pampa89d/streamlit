@@ -4,4 +4,4 @@
   2. Визуализация датасета по чаевым (используется датасет из директории github tips.csv)
 
 Приложение:
-https://pampa89d-streamlit-streamlit-app-kdl5iy.streamlit.app/
+https://pampa89d-streamlit-streamlit-app-4uqays.streamlit.app
